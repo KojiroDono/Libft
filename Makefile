@@ -6,7 +6,7 @@
 #    By: auguyon <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 15:44:37 by auguyon           #+#    #+#              #
-#    Updated: 2018/11/17 15:17:56 by auguyon          ###   ########.fr        #
+#    Updated: 2018/11/23 12:21:13 by auguyon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,6 @@ SRCS	=	ft_atoi.c\
 			ft_strsub.c\
 			ft_strjoin.c\
 			ft_strtrim.c\
-			ft_ccword.c\
 			ft_strsplit.c\
 			ft_itoa.c\
 			ft_putchar.c\
@@ -75,8 +74,13 @@ SRCS	=	ft_atoi.c\
 			ft_putnbr_fd.c\
 			ft_lstnew.c\
 			ft_lstdelone.c\
-			ft_lstdel.c
-
+			ft_lstdel.c\
+			ft_lstadd.c\
+			ft_lstiter.c\
+			ft_lstmap.c\
+			ft_strspn.c\
+			ft_strcspn.c
+			
 OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc

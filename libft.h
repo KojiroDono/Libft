@@ -6,15 +6,14 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 14:01:04 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/17 15:02:21 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/23 12:22:56 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <string.h>
 
 typedef struct		s_list
 {
@@ -26,7 +25,6 @@ typedef struct		s_list
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 void				ft_bzero(void *s, size_t n);
-int					ft_ccword(char *s, char c);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -68,7 +66,7 @@ void				ft_striter(char *s, void (*f)(char*));
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strncat(char *dest, const char *src, size_t n);
@@ -84,5 +82,13 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstnew(void const *content, size_t content_size);
+size_t				ft_strspn(const char *s, const char *c);
+size_t				ft_strcspn(const char *s, const char *c);
 
 #endif

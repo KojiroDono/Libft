@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {
@@ -19,6 +20,8 @@ char	*ft_itoa(int n)
 	int				neg;
 	char			*str;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (!(b = 0) && n == 0)
 		b++;
 	if (!(neg = 0) && n < 0 && ++b)

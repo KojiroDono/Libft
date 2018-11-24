@@ -6,11 +6,12 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 12:43:24 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/17 14:11:50 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/22 14:22:06 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

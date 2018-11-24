@@ -6,7 +6,7 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 10:31:27 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/16 16:00:40 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/23 11:41:06 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
+		return (ft_putstr_fd("-2147483648", fd));
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

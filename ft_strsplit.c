@@ -10,9 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	**ft_strsplit(char const *s, char c)
+static int	ft_ccword(char *s, char c)
+{
+	int		count;
+	int		i;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;

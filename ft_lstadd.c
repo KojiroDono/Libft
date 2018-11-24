@@ -6,7 +6,7 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 15:33:47 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/17 16:28:38 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/22 14:24:24 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	
+	if (*alst)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+	else
+		*alst = new;
 }

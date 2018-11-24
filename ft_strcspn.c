@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 10:08:22 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/23 12:13:28 by auguyon          ###   ########.fr       */
+/*   Created: 2018/11/23 12:36:59 by auguyon           #+#    #+#             */
+/*   Updated: 2018/11/23 15:04:54 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strcspn(const char *s, const char *c)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		j = 0;
+		while (c[j])
+		{
+			if (c[j] == s[i])
+				return (i);
+			j++;
+		}
 		i++;
-	return (i);
+	}
+	if (i)
+		return (i);
+	return (0);
 }
