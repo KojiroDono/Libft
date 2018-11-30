@@ -18,13 +18,11 @@ char	*ft_strndup(const char *str, size_t size)
 	char	*dst;
 	char	*cpy;
 
-	if ((size_t)ft_strlen(str) < size)
+	if (ft_strlen(str) < size)
 		size = (size_t)ft_strlen(str);
-	if (!(dst = (char*)malloc(sizeof(*str) * size + 1)))
+	if (!(dst = ft_memalloc(size + 1)))
 		return (NULL);
 	cpy = dst;
-	while (*str && size--)
-		*dst++ = *str++;
-	*dst = '\0';
+	ft_strncpy(dst, str, size);
 	return (cpy);
 }

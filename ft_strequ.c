@@ -6,7 +6,7 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 18:43:37 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/16 16:01:33 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/26 21:56:17 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (!s1 && !s2)
+		return (1);
 	if (!s1 || !s2)
 		return (0);
 	return ((ft_strcmp(s1, s2) == 0 ? 1 : 0));

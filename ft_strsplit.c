@@ -6,7 +6,7 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 12:01:55 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/16 12:15:53 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/26 21:54:12 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,7 @@ char		**ft_strsplit(char const *s, char c)
 	tab[i] = 0;
 	return (tab);
 }
+
+/*
+** Ajouter un free sur le 2eme malloc si erreur
+*/

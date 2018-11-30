@@ -6,7 +6,7 @@
 #    By: auguyon <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 15:44:37 by auguyon           #+#    #+#              #
-#    Updated: 2018/11/23 12:21:13 by auguyon          ###   ########.fr        #
+#    Updated: 2018/11/30 14:07:17 by auguyon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc
 
-CFLAGS	=	-Wall -Werror -Wextra -c
+CFLAGS	=	-Wall -Werror -Wextra -I $(LIB)
 
 LIB		=	libft.h
 
@@ -94,7 +94,6 @@ RM		=	rm -rf
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJS) $(LIB)
-			$(CC) $(CFLAGS) $(SRCS) -I $(LIB)
 			ar rc $(NAME) $(OBJS)
 
 clean	:

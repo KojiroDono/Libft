@@ -6,9 +6,11 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:31:10 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/23 11:13:18 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/11/30 13:28:05 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {

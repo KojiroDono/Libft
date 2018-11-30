@@ -21,7 +21,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
-	if (!(str = (char*)malloc(sizeof(*str) * (len + 1))))
+	if (!(str = ft_memalloc(len + 1)))
 		return (NULL);
 	while (*s)
 		*str++ = f(*s++);
