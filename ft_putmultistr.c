@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putmultistr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 19:01:54 by auguyon           #+#    #+#             */
-/*   Updated: 2018/12/10 11:53:05 by auguyon          ###   ########.fr       */
+/*   Created: 2018/12/10 14:04:50 by auguyon           #+#    #+#             */
+/*   Updated: 2018/12/11 12:09:26 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putmultistr(char **str)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	int i;
 
-	d = (unsigned char*)dest;
-	s = (unsigned char*)src;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	i = 0;
+	while (str[i] != 0)
+	{
+		ft_putstr(str[i++]);
+		ft_putchar('\n');
+	}
 }

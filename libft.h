@@ -6,7 +6,7 @@
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 14:01:04 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/27 08:41:12 by auguyon          ###   ########.fr       */
+/*   Updated: 2018/12/11 12:18:30 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
+void				ft_putmultistr(char **str);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
