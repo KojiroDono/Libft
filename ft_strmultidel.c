@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmultidel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 21:31:37 by auguyon           #+#    #+#             */
-/*   Updated: 2019/01/05 16:33:54 by auguyon          ###   ########.fr       */
+/*   Created: 2019/01/05 16:34:14 by auguyon           #+#    #+#             */
+/*   Updated: 2019/01/05 17:42:10 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_strdel(char **as)
+void	ft_strmultidel(char **str)
 {
-	if (!as)
-		return ((void)0);
-	if (*as)
-	{
-		free(*as);
-		*as = NULL;
-	}
-	return ((void)0);
+	while (*str)
+		ft_strdel(str++);
+	ft_strdel(str);
 }

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_isxdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 21:31:37 by auguyon           #+#    #+#             */
-/*   Updated: 2019/01/05 16:33:54 by auguyon          ###   ########.fr       */
+/*   Created: 2019/01/21 13:52:53 by auguyon           #+#    #+#             */
+/*   Updated: 2019/01/21 13:53:12 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_strdel(char **as)
+int ft_isxdigit(int c)
 {
-	if (!as)
-		return ((void)0);
-	if (*as)
-	{
-		free(*as);
-		*as = NULL;
-	}
-	return ((void)0);
+	return (ft_isdigit(c) || ((c >= 'A' && c <= 'F')
+		&& (c >= 'a' && c <= 'f')));
 }

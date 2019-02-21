@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 21:31:37 by auguyon           #+#    #+#             */
-/*   Updated: 2019/01/05 16:33:54 by auguyon          ###   ########.fr       */
+/*   Created: 2019/01/07 15:06:14 by auguyon           #+#    #+#             */
+/*   Updated: 2019/01/07 15:30:59 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_strdel(char **as)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t size)
 {
-	if (!as)
-		return ((void)0);
-	if (*as)
-	{
-		free(*as);
-		*as = NULL;
-	}
-	return ((void)0);
+	char	*dst;
+
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(dst = ft_memalloc(ft_strlen(s1) + size + 1)))
+		return (NULL);
+	ft_strncat((ft_strcpy(dst, s1)), s2, size);
+	return (dst);
 }

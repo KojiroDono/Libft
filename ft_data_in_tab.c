@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_data_in_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 21:31:37 by auguyon           #+#    #+#             */
-/*   Updated: 2019/01/05 16:33:54 by auguyon          ###   ########.fr       */
+/*   Created: 2019/02/16 12:37:14 by auguyon           #+#    #+#             */
+/*   Updated: 2019/02/16 12:37:18 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_strdel(char **as)
+int	ft_data_in_tab(int *tab, int data, size_t size)
 {
-	if (!as)
-		return ((void)0);
-	if (*as)
+	size_t	i;
+
+	i = 0;
+	while (i < size)
 	{
-		free(*as);
-		*as = NULL;
+		if (data == tab[i])
+			return (1);
+		i++;
 	}
-	return ((void)0);
+	return (0);
 }
