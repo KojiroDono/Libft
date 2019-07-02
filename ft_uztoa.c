@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_uztoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 20:41:56 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/16 10:52:58 by auguyon          ###   ########.fr       */
+/*   Created: 2019/06/24 17:29:03 by auguyon           #+#    #+#             */
+/*   Updated: 2019/06/24 17:29:10 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_uztoa(size_t n)
 {
 	unsigned int	a;
-	int				b;
-	int				neg;
+	unsigned int	b;
 	char			*str;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (!(b = 0) && n == 0)
-		b++;
-	if (!(neg = 0) && n < 0 && ++b)
-		neg = 1;
-	a = (neg ? -n : n);
+	a = n;
+	b = 0;
+	if (n == 0)
+		b = 1;
 	while (n && ++b)
-		n = n / 10;
+		n /= 10;
 	if (!(str = (char*)malloc(sizeof(char) * b + 1)))
 		return (0);
 	str[b] = '\0';
@@ -37,6 +33,5 @@ char	*ft_itoa(int n)
 		str[b] = (a % 10) + '0';
 		a = a / 10;
 	}
-	(neg ? str[0] = '-' : 1);
 	return (str);
 }

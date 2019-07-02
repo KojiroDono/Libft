@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base_caps.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -38,7 +38,7 @@ static char	*min_int(int n, int base)
 	return (str);
 }
 
-char		*ft_itoa_base(int n, int base)
+char	*ft_itoa_base_caps(int n, int base)
 {
 	char	*str;
 	int		i;
@@ -61,7 +61,7 @@ char		*ft_itoa_base(int n, int base)
 	while (i > neg)
 	{
 		nb = (n % base);
-		str[--i] = nb > 9 ? nb + 87 : nb + 48;
+		str[--i] = nb > 9 ? nb + 55 : nb + 48;
 		n /= base;
 	}
 	return (str);

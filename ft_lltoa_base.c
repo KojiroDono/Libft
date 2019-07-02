@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_lltoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 10:40:27 by auguyon           #+#    #+#             */
-/*   Updated: 2019/01/21 10:40:36 by auguyon          ###   ########.fr       */
+/*   Created: 2019/07/01 15:47:29 by auguyon           #+#    #+#             */
+/*   Updated: 2019/07/01 15:47:30 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*min_int(int n, int base)
+static char	*min_long_long(long long n, int base)
 {
 	char	*str;
-	int		nb;
+	long long		nb;
 	int		i;
 
 	i = 3;
@@ -27,7 +27,7 @@ static char	*min_int(int n, int base)
 		return (NULL);
 	str[i--] = '\0';
 	str[0] = '-';
-	nb = (8 % base);
+	nb = (7 % base);
 	str[i] = nb > 9 ? nb + 55 : nb + 48;
 	while (i > 1)
 	{
@@ -38,16 +38,16 @@ static char	*min_int(int n, int base)
 	return (str);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_lltoa_base(long long n, int base)
 {
-	char	*str;
-	int		i;
-	int		nb;
-	int		neg;
+	char		*str;
+	int			i;
+	long long	nb;
+	int			neg;
 
 	i = 1;
-	if (n == -2147483648)
-		return (min_int(214748364, base));
+	if (n == -922337203685477580)
+		return (min_long_long(922337203685477580, base));
 	if (!(neg = 0) && n < 0 && ++i)
 		neg = 1;
 	neg ? n *= -1 : 1;
@@ -66,3 +66,4 @@ char		*ft_itoa_base(int n, int base)
 	}
 	return (str);
 }
+

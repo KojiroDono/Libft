@@ -27,7 +27,11 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 			ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c\
 			ft_putstr_fd.c ft_lstiter.c ft_lstmap.c ft_strspn.c ft_strcspn.c\
 			ft_strmultidel.c ft_putmultistr.c ft_strnjoin.c ft_atoi_base.c\
-			ft_isxdigit.c ft_itoa_base.c ft_data_in_tab.c 
+			ft_isxdigit.c ft_itoa_base.c ft_data_in_tab.c ft_memlcpy.c\
+			ft_strccmp.c ft_strnccmp.c ft_strcchr.c ft_memlcat.c \
+			ft_utoa.c ft_utoa_base.c ft_uztoa.c ft_uztoa_base.c \
+			ft_itoa_base_caps.c ft_utoa_base_caps.c ft_lltoa.c\
+			ft_lltoa_base.c
 			
 OBJS	=	$(SRCS:.c=.o)
 

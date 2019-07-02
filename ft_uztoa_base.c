@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_uztoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: auguyon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 20:41:56 by auguyon           #+#    #+#             */
-/*   Updated: 2018/11/16 10:52:58 by auguyon          ###   ########.fr       */
+/*   Created: 2019/06/24 17:29:15 by auguyon           #+#    #+#             */
+/*   Updated: 2019/06/24 17:29:16 by auguyon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_uztoa_base(size_t n, unsigned int base)
 {
-	unsigned int	a;
-	int				b;
-	int				neg;
+	unsigned int	i;
+	unsigned int	nb;
 	char			*str;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (!(b = 0) && n == 0)
-		b++;
-	if (!(neg = 0) && n < 0 && ++b)
-		neg = 1;
-	a = (neg ? -n : n);
-	while (n && ++b)
-		n = n / 10;
-	if (!(str = (char*)malloc(sizeof(char) * b + 1)))
-		return (0);
-	str[b] = '\0';
-	while (b--)
+	nb = n;
+	i = 1;
+	while ((nb = (nb / base)) > 0)
+		i++;
+	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	str[i] = '\0';
+	while (i > 0)
 	{
-		str[b] = (a % 10) + '0';
-		a = a / 10;
+		nb = (n % base);
+		str[--i] = nb > 9 ? nb + 55 : nb + 48;
+		n /= base;
 	}
-	(neg ? str[0] = '-' : 1);
 	return (str);
 }
